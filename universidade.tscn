@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3hi2rsw1j6tl"]
+
+[ext_resource type="Texture2D" uid="uid://dojyx80oou157" path="res://kiwi parado/img1-fotor-bg-remover-2025100515459.png" id="1_b750q"]
+[ext_resource type="Script" uid="uid://dnfq4obcwjf06" path="res://universidade.gd" id="1_yec1e"]
+[ext_resource type="Texture2D" uid="uid://dbdhkcwmlwvfh" path="res://BG's/BG universidade.png" id="2_sy3w5"]
+[ext_resource type="Texture2D" uid="uid://cnw5f5l6xxi6h" path="res://kiwi parado/img1-animacao2-fotor-bg-remover-20251005154734.png" id="2_yec1e"]
+[ext_resource type="Texture2D" uid="uid://cmedwsis0ncfg" path="res://personagens dialogo/fiuza rato-fotor-bg-remover-20251108211123.png" id="3_sy3w5"]
+[ext_resource type="Texture2D" uid="uid://dfjxjbe8bfbb0" path="res://personagens dialogo/fiuza rato-fotor-bg-remover-20251108211810.png" id="4_fe4yf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c47ga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b750q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yec1e")
+}],
+"loop": true,
+"name": &"kiwi respirando",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eprfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sy3w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fe4yf")
+}],
+"loop": true,
+"name": &"fiuza respirando",
+"speed": 1.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yec1e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(586, 323.99997)
+scale = Vector2(0.7630208, 0.64257807)
+texture = ExtResource("2_sy3w5")
+
+[node name="kiwi" type="AnimatedSprite2D" parent="."]
+position = Vector2(120, 478.75)
+scale = Vector2(0.436, 0.43700004)
+sprite_frames = SubResource("SpriteFrames_c47ga")
+animation = &"kiwi respirando"
+autoplay = "kiwi respirando"
+
+[node name="fiuza" type="AnimatedSprite2D" parent="."]
+position = Vector2(317.00003, 484.00003)
+scale = Vector2(0.29150003, 0.30400005)
+sprite_frames = SubResource("SpriteFrames_eprfu")
+animation = &"fiuza respirando"
+autoplay = "fiuza respirando"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 449.0
+offset_top = 409.0
+offset_right = 1095.0
+offset_bottom = 550.0
+
+[node name="Nome" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 20.0
+offset_right = 243.0
+offset_bottom = 58.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 57.0
+offset_right = 470.0
+offset_bottom = 117.0

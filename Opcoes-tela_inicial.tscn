@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct4mn1sr7fjo7"]
+
+[ext_resource type="Script" uid="uid://cefs4iu8nrgaw" path="res://Opcoes-Tela.gd" id="1_fjboi"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 1171.0
+offset_bottom = 657.0
+color = Color(0, 0, 0, 0.5647059)
+script = ExtResource("1_fjboi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 175.0
+offset_right = 875.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 25
+text = "Andar pra esquerda - Seta para a esquerda ou \"A\"
+     Andar pra direita - Seta para a direita ou \"D\" 
+                    Pular - Seta para cima ou \"W\" 
+                                 Lanterna - \"F\" 
+                         Interagir - \"E\" ou Space
+                       Pausar o jogo - Tecla ESC"
+
+[node name="voltar_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 491.0
+offset_right = 649.0
+offset_bottom = 541.0
+theme_override_font_sizes/font_size = 30
+text = "Voltar"
+
+[connection signal="pressed" from="voltar_btn" to="." method="_on_voltar_btn_pressed"]

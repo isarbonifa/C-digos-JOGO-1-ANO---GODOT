@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://2bq88xdwm6n8"]
+
+[ext_resource type="Script" uid="uid://dkg5lll1uajkb" path="res://menu_de_pause.gd" id="1_lti8b"]
+
+[node name="MenuDePause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_lti8b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.49803922)
+
+[node name="PainelPrincipal" type="Control" parent="."]
+process_mode = 3
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 572.0
+offset_top = 382.0
+offset_right = 614.0
+offset_bottom = 412.0
+
+[node name="Continuar" type="Button" parent="PainelPrincipal"]
+layout_mode = 0
+offset_left = -43.0
+offset_top = -128.0
+offset_right = 46.0
+offset_bottom = -96.0
+text = "Continuar"
+
+[node name="Opções" type="Button" parent="PainelPrincipal"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -84.0
+offset_right = 33.0
+offset_bottom = -53.0
+text = "Opções"
+
+[node name="Label" type="Label" parent="PainelPrincipal/Opções"]
+layout_mode = 0
+offset_left = -499.0
+offset_top = -267.0
+offset_right = -115.0
+offset_bottom = -114.0
+text = "Andar pra esquerda - Seta para a esquerda ou \"A\"
+Andar pra direita - Seta para a direita ou \"D\" 
+Pular - Seta para cima ou \"W\" 
+Lanterna - \"F\" 
+Interagir - \"E\" ou Space
+Pausar o jogo - Tecla ESC"
+
+[node name="voltar" type="Button" parent="PainelPrincipal/Opções"]
+layout_mode = 0
+offset_left = -504.0
+offset_top = -71.0
+offset_right = -429.0
+offset_bottom = -40.0
+text = "Voltar"
+
+[node name="Sair do jogo" type="Button" parent="PainelPrincipal"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.5600004
+anchor_top = 1.557
+anchor_right = -5.5600004
+anchor_bottom = 1.557
+offset_left = 184.52002
+offset_top = -84.71001
+offset_right = 283.52002
+offset_bottom = -53.710003
+text = "Sair do Jogo"
+
+[connection signal="pressed" from="PainelPrincipal/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="PainelPrincipal/Opções" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="PainelPrincipal/Opções/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="PainelPrincipal/Sair do jogo" to="." method="_on_sair_do_jogo_pressed"]
